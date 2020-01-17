@@ -21,11 +21,11 @@ async function getRepos(req, res, next) {
 
     const { username } = req.params;
 
-    const response = await fetch(`https://api.github.com/users/${username}`);
+    const response = await fetch(`http://9.122.248.229:30016/api/notes/1`);
 
     const data = await response.json();
 
-    const repos = data.public_repos;
+    const repos = data.title;
 
     // Set data to Redis
     client.setex(username, 3600, repos);
