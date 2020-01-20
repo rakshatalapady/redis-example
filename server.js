@@ -21,7 +21,7 @@ async function getRepos(req, res, next) {
 
     const { username } = req.params;
 
-    const response = await fetch(`https://api.github.com/users/${username}`);
+    const response = await fetch(`http://api.github.com/users/${username}`);
 
     const data = await response.json();
 
